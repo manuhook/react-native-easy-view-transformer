@@ -1,14 +1,10 @@
-import React from "react";
-import {
-    View, Animated, Easing, NativeModules, findNodeHandle
-} from "react-native";
-import Scrolling from "react-native-scrolling";
 import PropTypes from "prop-types";
+import React from "react";
+import { Animated, Easing, findNodeHandle, NativeModules, View } from "react-native";
 import { createResponder } from "react-native-easy-guesture-responder";
-import {
-    Rect, Transform, transformedRect, availableTranslateSpace,
-    fitCenterRect, alignedRect, getTransform
-} from "./TransformUtils";
+import Scrolling from "react-native-scrolling";
+
+import { alignedRect, availableTranslateSpace, fitCenterRect, getTransform, Rect, Transform, transformedRect } from "./TransformUtils";
 
 export default class ViewTransformer extends React.Component {
     static Rect = Rect;
@@ -522,6 +518,7 @@ export default class ViewTransformer extends React.Component {
         Animated.timing(
             this.state.animator,
             {
+                useNativeDriver: true,
                 toValue: 1,
                 duration: duration,
                 easing: Easing.inOut(Easing.ease)
