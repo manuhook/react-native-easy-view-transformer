@@ -299,12 +299,12 @@ export default class ViewTransformer extends React.Component {
             this.props.onTransformGestureReleased(transform);
 
         if (this.props.onSwipeUpReleased) {
-            if (this.state.scale === 1 && this.state.translateY < -150) {
+            if (this.state.scale <= 1.2 && this.state.scale >= 0.9 && this.state.translateY < -125) {
                 this.props.onSwipeUpReleased(transform);
             }
         }
         if (this.props.onSwipeDownReleased) {
-            if (this.state.scale === 1 && this.state.translateY > 150) {
+            if (this.state.scale <= 1.2 && this.state.scale >= 0.9 && this.state.translateY > 125) {
                 this.props.onSwipeDownReleased(transform);
             }
         }

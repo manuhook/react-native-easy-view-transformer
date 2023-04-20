@@ -1,6 +1,6 @@
 {
-  "version": "1.2.2",
-  "name": "@manuhook/react-native-easy-view-transformer",
+  "version": "1.2.0",
+  "name": "react-native-easy-view-transformer",
   "description": "An easy and simple to use React Native component to transform and translate a view with gestures like pan, pinch and double tap.  Supporting both iOS and Android. Free and made possible along with costly maintenance and updates by [Lue Hang](https://www.facebook.com/lue.hang) (the author).",
   "keywords": [
     "react-native-easy-view-transformer",
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/manuhook/react-native-easy-view-transformer"
+    "url": "https://github.com/manuhook/react-native-easy-view-transformer.git"
   },
   "bugs": {
     "url": "https://github.com/Luehang/react-native-easy-view-transformer/issues"
