@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import {Animated, Easing, findNodeHandle, UIManager, View} from "react-native";
+import {Animated, Easing, View} from "react-native";
 import {createResponder} from "react-native-easy-guesture-responder";
 import Scrolling from "react-native-scrolling";
 
@@ -205,8 +205,10 @@ export default class ViewTransformer extends React.Component {
   }
 
   measureLayout() {
-    let handle = findNodeHandle(this.innerViewRef);
-    UIManager.measure(handle, (x, y, width, height, pageX, pageY) => {
+    if (!this.innerViewRef) {
+      return;
+    }
+    this.innerViewRef.measure((x, y, width, height, pageX, pageY) => {
       if (typeof pageX === "number" && typeof pageY === "number") {
         // avoid undefined values on Android devices
         if (this.state.pageX !== pageX || this.state.pageY !== pageY) {
